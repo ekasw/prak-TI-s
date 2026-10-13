@@ -1,5 +1,5 @@
 +++
-date = '2026-10-13T22:56:01+08:00'
+date = '2026-10-12T22:56:01+08:00'
 draft = false
 title= 'Cara Install MicroPython Pada ESP32 dan ESP8266'
 +++
