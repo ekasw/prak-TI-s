@@ -2,10 +2,13 @@
 date = '2026-10-12T22:56:01+08:00'
 draft = false
 title= 'Cara Install MicroPython Pada ESP32 dan ESP8266'
+
+[cover]
+    image = "/images/header1.jpg"
+    alt = "Skema ESP32"
+    caption = "Proyek IoT Menggunakan ESP"
 +++
 Kali ini kita akan coba cara mem-flash firmware MicroPython ke papan ESP32/ESP8266 menggunakan perangkat lunak IDE uPyCraft. Tools ini dapat berjalan di Windows, Linux, dan Mac OS X.
-
-Press enter or click to view image in full size
 
 Sebelum melanjutkan tutorial ini, pastikan kita sudah menginstal uPyCraft IDE di komputer/laptop kesayangan… Jika belum dapat didownload dan diinstall secara gratis di sini: GitHub — DFRobot/uPyCraft. Dengan uPyCraft IDE yang diinstal di komputer, kita dapat dengan mudah mem-flash mikrokontroler ESP32 atau ESP8266 dengan firmware MicroPython.
 
@@ -16,7 +19,7 @@ Untuk mengunduh firmware MicroPython versi terbaru untuk ESP32, buka halaman Und
 
 Anda akan melihat halaman web serupa (lihat gambar di bawah) dengan tautan terbaru untuk mengunduh file .bin ESP32 — misalnya: esp32–20181007-v1.9.4–631-g338635ccc.bin.
 
-Press enter or click to view image in full size
+![Mengunduh file bin esp32](/images/micropython-esp1.jpg)
 
 Catatan: jika Anda menggunakan mikrokontroler yang berbeda (seperti PyBoard, WiPy, atau lainnya), buka halaman Unduhan MicroPython dan unduh firmware yang tepat untuk papan Anda.
 

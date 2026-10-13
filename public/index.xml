@@ -14,7 +14,6 @@
       <pubDate>Mon, 12 Oct 2026 22:56:01 +0800</pubDate>
       <guid>http://localhost:1313/posts/tutorial-iot/</guid>
       <description>&lt;p&gt;Kali ini kita akan coba cara mem-flash firmware MicroPython ke papan ESP32/ESP8266 menggunakan perangkat lunak IDE uPyCraft. Tools ini dapat berjalan di Windows, Linux, dan Mac OS X.&lt;/p&gt;
-&lt;p&gt;Press enter or click to view image in full size&lt;/p&gt;
 &lt;p&gt;Sebelum melanjutkan tutorial ini, pastikan kita sudah menginstal uPyCraft IDE di komputer/laptop kesayangan… Jika belum dapat didownload dan diinstall secara gratis di sini: GitHub — DFRobot/uPyCraft. Dengan uPyCraft IDE yang diinstal di komputer, kita dapat dengan mudah mem-flash mikrokontroler ESP32 atau ESP8266 dengan firmware MicroPython.&lt;/p&gt;</description>
     </item>
   </channel>
