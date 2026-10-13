@@ -1,4 +1,14 @@
 baseURL = 'https://rad-douhua-42e1e1.netlify.app/'
 locale = 'en-us'
-title = 'My New Hugo Project'
+title = 'Prak-TI`s'
 theme = "PaperMod"
+
+[params]
+    env = "production"
+    title = "Prak TI - IoT & Tech Blog"
+    description = "Berbagi tutorial IoT, pemrograman, dan dunia TI praktis."
+    
+    # Memunculkan tombol ikon sosial media atau ikon RSS di header (opsional)
+    ShowReadingTime = true
+    ShowShareButtons = true
+    ShowCodeCopyButtons = true
