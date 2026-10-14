@@ -1,10 +1,12 @@
 backend:
   name: github
-  repo: USERNAME_GITHUB_ANDA/NAMA_REPO_ANDA # Contoh: ekasw/prak-TI-s
+  repo: ekasw/prak-TI-s # Contoh: ekasw/prak-TI-s
   branch: main
 
 media_folder: "static/images"
 public_folder: "/images"
+
+format: "toml"
 
 collections:
   - name: "posts"
