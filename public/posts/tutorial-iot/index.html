@@ -113,8 +113,8 @@ Sebelum melanjutkan tutorial ini, pastikan kita sudah menginstal uPyCraft IDE di
   "keywords": [
     
   ],
-  "articleBody": "Kali ini kita akan coba cara mem-flash firmware MicroPython ke papan ESP32/ESP8266 menggunakan perangkat lunak IDE uPyCraft. Tools ini dapat berjalan di Windows, Linux, dan Mac OS X.\nSebelum melanjutkan tutorial ini, pastikan kita sudah menginstal uPyCraft IDE di komputer/laptop kesayangan… Jika belum dapat didownload dan diinstall secara gratis di sini: GitHub — DFRobot/uPyCraft. Dengan uPyCraft IDE yang diinstal di komputer, kita dapat dengan mudah mem-flash mikrokontroler ESP32 atau ESP8266 dengan firmware MicroPython.\nCatatan: Setelah menginstal firmware MicroPython pada ESP32 atau ESP8266, kita dapat kembali dan menggunakan Arduino IDE lagi. Yang dilakukan hanya perlu mengunggah kode menggunakan Arduino IDE. Kemudian, jika ingin menggunakan MicroPython lagi, kita perlu mem-flash firmware MicroPython kembali.\n[Bagian 1 — ESP32] Mengunduh dan Mem-flash Firmware MicroPython di ESP32 Untuk mengunduh firmware MicroPython versi terbaru untuk ESP32, buka halaman Unduhan MicroPython dan gulir ke bawah ke bagian ESP32.\nAnda akan melihat halaman web serupa (lihat gambar di bawah) dengan tautan terbaru untuk mengunduh file .bin ESP32 — misalnya: esp32–20181007-v1.9.4–631-g338635ccc.bin.\nCatatan: jika Anda menggunakan mikrokontroler yang berbeda (seperti PyBoard, WiPy, atau lainnya), buka halaman Unduhan MicroPython dan unduh firmware yang tepat untuk papan Anda.\nMemilih Port Serial Buka Alat \u003e Serial dan pilih port COM ESP32 Anda (dalam kasus kami adalah COM5).\nImportant: Jika telah menghubungkan ESP32 ke komputer, tetapi tidak dapat menemukan Port ESP32 yang tersedia di IDE uPyCraft, ada beberapa kemungkinan: 1. Driver USB bermasalah atau belum diinstall, atau 2. Kabel USB yang dipakai adalah kabel tanpa kabel data (hanya untuk cas saja).\nJika tidak melihat port COM ESP yang tersedia, ini sering kali berarti kita belum menginstal driver USB. Perhatikan lebih cermat chip di sebelah regulator tegangan pada papan dan periksa namanya. ESP32 DEVKIT V1 DOIT board menggunakan chip CP2102.\nPress enter or click to view image in full size\nBuka Google dan cari chip spesifik Anda untuk menemukan driver dan menginstalnya di sistem operasi Anda.\nPress enter or click to view image in full size\nAnda dapat mengunduh driver CP2102 di situs web Silicon Labs.\nPress enter or click to view image in full size\nSetelah diinstal, mulai ulang IDE uPyCraft dan kita akan melihat port COM di menu Tools.\nJika telah menginstal driver, tetapi tidak dapat melihat perangkat, periksa kembali apakah sudah dipastikan menggunakan kabel USB dengan kabel data. Kabel USB dari powerbank seringkali tidak memiliki kabel data (hanya diisi daya). Jadi, komputer tidak akan pernah menjalin komunikasi serial dengan ESP32. Menggunakan kabel USB yang tepat akan menyelesaikan masalahnya.\nMemilih Board Go to Tools \u003e Board. For this tutorial, we assume that you’re using the ESP32, so make sure you select the “esp32” option:\nFlashing/Uploading MicroPython Firmware Finally, go to Tools \u003e BurnFirmware menu to flash your ESP32 with MicroPython.\nSelect all these options to flash the ESP32 board:\nboard: esp32 burn_addr: 0x1000 erase_flash: yes com: COMX (in our case it’s COM5) Firmware: Select “Users” and choose the ESP32 .bin file downloaded earlier\nSetelah menekan tombol “Pilih”, navigasikan ke folder Unduhan Anda dan pilih file .bin ESP32:\nPress enter or click to view image in full size\nSetelah semua pengaturan dipilih, tahan tombol “BOOT/FLASH” di papan ESP32 Anda:\nPress enter or click to view image in full size\nSambil menahan “BOOT/FLASH”, klik tombol “ok” di jendela firmware bakar:\nSaat proses “EraseFlash” dimulai, Anda dapat melepaskan tombol “BOOT/FLASH”. Setelah beberapa detik, firmware akan di-flash ke papan ESP32 Anda.\nCatatan: jika bilah “EraseFlash” tidak bergerak dan Anda melihat pesan kesalahan yang mengatakan “hapus salah.”, itu berarti ESP32 Anda tidak dalam mode berkedip. Anda perlu mengulangi semua langkah yang dijelaskan sebelumnya dan menahan tombol “BOOT/FLASH” lagi untuk memastikan ESP32 Anda masuk ke mode berkedip.\n[Bagian 2 — ESP8266] Mengunduh dan Mem-flash Firmware MicroPython di ESP8266 Untuk mengunduh firmware MicroPython versi terbaru untuk ESP8266, buka halaman Unduhan MicroPython dan gulir ke bawah ke bagian ESP8266.\nDownload the Medium app Anda akan melihat halaman web serupa (lihat gambar di bawah) dengan tautan terbaru untuk mengunduh file .bin ESP8266 — misalnya: esp8266–20180511-v1.9.4.bin.\nPress enter or click to view image in full size\nCatatan: jika Anda menggunakan papan yang berbeda (seperti PyBoard, WiPy, atau lainnya), buka halaman Unduhan MicroPython dan unduh firmware yang tepat untuk papan Anda.\nMemilih Port Serial Buka Alat \u003e Serial dan pilih port COM ESP8266 Anda (dalam kasus kami adalah COM5).\nPenting: jika Anda mencolokkan papan ESP32 ke komputer, tetapi Anda tidak dapat menemukan Port ESP32 yang tersedia di IDE uPyCraft, itu mungkin salah satu dari dua masalah ini: 1. Driver USB hilang atau 2. Kabel USB tanpa kabel data.\nJika Anda tidak melihat port COM ESP Anda tersedia, ini sering kali berarti Anda tidak menginstal driver USB. Perhatikan lebih dekat chip di sebelah pengatur tegangan di atas kapal dan periksa namanya. Papan ESP-12E NodeMCU ESP8266 menggunakan chip CP2102.\nPress enter or click to view image in full size\nBuka Google dan cari chip spesifik Anda untuk menemukan driver dan menginstalnya di sistem operasi Anda.\nPress enter or click to view image in full size\nAnda dapat mengunduh driver CP2102 di situs web Silicon Labs.\nPress enter or click to view image in full size\nSetelah diinstal, mulai ulang IDE uPyCraft dan Anda akan melihat port COM di menu Alat.\nJika Anda telah menginstal driver, tetapi Anda tidak dapat melihat perangkat, periksa kembali apakah Anda menggunakan kabel USB dengan kabel data. Kabel USB dari powerbank seringkali tidak memiliki kabel data (hanya diisi daya). Jadi, komputer Anda tidak akan pernah menjalin komunikasi serial dengan ESP8266 Anda. Menggunakan kabel USB yang tepat akan menyelesaikan masalah Anda.\nMemilih Papan Buka Alat \u003e Board. Untuk tutorial ini, kami berasumsi bahwa Anda menggunakan ESP8266, jadi pastikan Anda memilih opsi “esp8266”:\nMem-flash/Mengunggah Firmware MicroPython Terakhir, buka menu Tools \u003e BurnFirmware untuk mem-flash ESP32 Anda dengan MicroPython.\nPilih semua opsi ini untuk mem-flash papan ESP8266:\nPapan: ESP8266 burn_addr: 0x0 erase_flash: Iya com: COMX (dalam kasus kami COM5) Firmware: Pilih “Pengguna” dan pilih file .bin ESP8266 yang diunduh sebelumnya\nSetelah menekan tombol “Pilih”, navigasikan ke folder Unduhan Anda dan pilih file .bin ESP8266:\nPress enter or click to view image in full size\nSetelah semua pengaturan dipilih, tahan tombol “BOOT/FLASH” di papan ESP8266 Anda:\nSambil menahan “BOOT/FLASH”, klik tombol “ok” di jendela firmware bakar:\nSaat proses “EraseFlash” dimulai, Anda dapat melepaskan tombol “BOOT/FLASH”. Setelah beberapa detik, firmware akan di-flash ke papan ESP8266 Anda.\nCatatan: jika tanda pada “EraseFlash” tidak bergerak dan Anda melihat pesan kesalahan yang bertuliskan “erase false.”, itu berarti ESP8266 Anda tidak dalam flashing mode. Anda perlu mengulangi semua langkah yang dijelaskan sebelumnya dan menahan tombol “BOOT/FLASH” lagi untuk memastikan ESP8266 Anda masuk ke flashing mode.\nKesimpulan Semoga tutorial ini bermanfaat bagi pengembang IoT yang ingin menggunakan skrip bahasa pemrograman berbasis Python. ESP32/ESP8266 kita sekarang telah selesai di-flash dengan firmware MicroPython. Untuk mempelajari lebih lanjut tentang MicroPython, baca: Memulai MicroPython di ESP32 dan ESP8266.\nKode Pemrograman Berikut adalah kode praktis untuk mencobanya:\n",
-  "wordCount" : "1130",
+  "articleBody": "Kali ini kita akan coba cara mem-flash firmware MicroPython ke papan ESP32/ESP8266 menggunakan perangkat lunak IDE uPyCraft. Tools ini dapat berjalan di Windows, Linux, dan Mac OS X.\nSebelum melanjutkan tutorial ini, pastikan kita sudah menginstal uPyCraft IDE di komputer/laptop kesayangan… Jika belum dapat didownload dan diinstall secara gratis di sini: GitHub — DFRobot/uPyCraft. Dengan uPyCraft IDE yang diinstal di komputer, kita dapat dengan mudah mem-flash mikrokontroler ESP32 atau ESP8266 dengan firmware MicroPython.\nCatatan: Setelah menginstal firmware MicroPython pada ESP32 atau ESP8266, kita dapat kembali dan menggunakan Arduino IDE lagi. Yang dilakukan hanya perlu mengunggah kode menggunakan Arduino IDE. Kemudian, jika ingin menggunakan MicroPython lagi, kita perlu mem-flash firmware MicroPython kembali.\nBagian 1 — Mengunduh dan Mem-flash Firmware MicroPython di ESP32 Untuk mengunduh firmware MicroPython versi terbaru untuk ESP32, buka halaman Unduhan MicroPython berikut ini dan gulir ke bawah ke bagian ESP32.\nAnda akan melihat halaman web serupa (lihat gambar di bawah) dengan tautan terbaru untuk mengunduh file .bin ESP32 — misalnya: esp32–20181007-v1.9.4–631-g338635ccc.bin. ![[Pasted image 20261016065640.png]]\nCatatan: jika Anda menggunakan mikrokontroler yang berbeda (seperti PyBoard, WiPy, atau lainnya), buka halaman Unduhan MicroPython dan unduh firmware yang tepat untuk papan Anda.\nMemilih Port Serial Buka Alat \u003e Serial dan pilih port COM ESP32 Anda (dalam kasus kami adalah COM5). ![[Pasted image 20261016065720.png]]\nPeringatan: Jika telah menghubungkan ESP32 ke komputer, tetapi tidak dapat menemukan Port ESP32 yang tersedia di IDE uPyCraft, ada beberapa kemungkinan: 1. Driver USB bermasalah atau belum diinstall, atau 2. Kabel USB yang dipakai adalah kabel tanpa kabel data (hanya untuk cas saja).\nJika tidak melihat port COM ESP yang tersedia, ini sering kali berarti kita belum menginstal driver USB. Perhatikan lebih cermat chip di sebelah regulator tegangan pada papan dan periksa namanya. Pada percobaan ini, kami mendapatkan informasi board yang digunakan adalah ESP32 DEVKIT V1 DOIT board menggunakan chip CP2102. ![[Pasted image 20261016070003.png]]\nBuka Google dan cari chip spesifik Anda untuk menemukan driver dan menginstalnya di sistem operasi Anda.\n![[Pasted image 20261016070017.png]]\nAnda dapat mengunduh driver CP2102 di situs web Silicon Labs.\n![[Pasted image 20261016070103.png]]\nSetelah diinstal, restart IDE uPyCraft dan kita akan melihat port COM di menu Tools.\nJika telah menginstal driver, tetapi tidak dapat melihat perangkat, periksa kembali apakah sudah dipastikan menggunakan kabel USB dengan kabel data. Kabel USB dari powerbank seringkali tidak memiliki kabel data (hanya diisi daya). Jadi, komputer tidak akan pernah menjalin komunikasi serial dengan ESP32. Menggunakan kabel USB yang tepat akan menyelesaikan masalahnya.\nMemilih Board Pilih Tools \u003e Board. Pada tutorial ini kami menggunakan ESP32, so make sure you select the “esp32” option: ![[Pasted image 20261016070201.png]]\nFlashing/Uploading MicroPython Firmware Langkah terakhir, go to Tools \u003e BurnFirmware menu to flash your ESP32 with MicroPython. ![[Pasted image 20261016070345.png]]\nSelect all these options to flash the ESP32 board:\nboard: esp32 burn_addr: 0x1000 erase_flash: yes com: COMX (in our case it’s COM5) Firmware: Select “Users” and choose the ESP32 .bin file downloaded earlier ![[Pasted image 20261016070407.png]] Setelah menekan tombol “Pilih”, navigasikan ke folder Unduhan Anda dan pilih file .bin ESP32: ![[Pasted image 20261016070419.png]]\nSetelah semua pengaturan dipilih, tahan tombol “BOOT/FLASH” di papan ESP32 Anda: ![[Pasted image 20261016070438.png]]\nSambil menahan “BOOT/FLASH”, klik tombol “ok” di jendela update firmware: ![[Pasted image 20261016070449.png]]\nSaat proses “EraseFlash” dimulai, Anda dapat melepaskan tombol “BOOT/FLASH”. Setelah beberapa detik, firmware akan di-flash ke papan ESP32 Anda. ![[Pasted image 20261016070530.png]]\nCatatan: jika bilah “EraseFlash” tidak bergerak dan Anda melihat pesan kesalahan yang mengatakan “erase false.”, itu berarti ESP32 Anda tidak dalam mode berkedip. Anda perlu mengulangi semua langkah yang dijelaskan sebelumnya dan menahan tombol “BOOT/FLASH” lagi untuk memastikan ESP32 Anda masuk ke mode berkedip. ![[Pasted image 20261016070604.png]]\nBagian 2 — Mengunduh dan Mem-flash Firmware MicroPython di ESP8266 Untuk mengunduh firmware MicroPython versi terbaru untuk ESP8266, buka halaman Unduhan MicroPython berikut ini dan gulir ke bawah ke bagian ESP8266. Anda akan melihat halaman web serupa (lihat gambar di bawah) dengan tautan terbaru untuk mengunduh file .bin ESP8266 — misalnya: esp8266–20180511-v1.9.4.bin. ![[Pasted image 20261016070816.png]] Catatan: jika Anda menggunakan papan yang berbeda (seperti PyBoard, WiPy, atau lainnya), buka halaman Unduhan MicroPython berikut ini dan unduh firmware yang tepat untuk papan Anda.\nMemilih Port Serial Buka Alat \u003e Serial dan pilih port COM ESP8266 Anda (dalam kasus kami adalah COM5). ![[Pasted image 20261016070920.png]]\nPenting: jika Anda mencolokkan papan ESP32 ke komputer, tetapi Anda tidak dapat menemukan Port ESP32 yang tersedia di IDE uPyCraft, itu mungkin salah satu dari dua masalah ini: 1. Driver USB hilang atau 2. Kabel USB tanpa kabel data.\nJika Anda tidak melihat port COM ESP Anda tersedia, ini sering kali berarti Anda tidak menginstal driver USB. Perhatikan lebih dekat chip di sebelah pengatur tegangan di atas kapal dan periksa namanya. Pada tutorial ini kebetulan kami mendapatkan informasi board ESP-12E NodeMCU ESP8266 menggunakan chip CP2102. ![[Pasted image 20261016071021.png]] Buka Google dan cari chip spesifik Anda untuk menemukan driver dan menginstalnya di sistem operasi Anda. ![[Pasted image 20261016071037.png]] Anda dapat mengunduh driver CP2102 di situs web Silicon Labs berikut ini. ![[Pasted image 20261016071117.png]]\nSetelah diinstal, mulai ulang IDE uPyCraft dan Anda akan melihat port COM di menu Alat.\nJika Anda telah menginstal driver, tetapi Anda tidak dapat melihat perangkat, periksa kembali apakah Anda menggunakan kabel USB dengan kabel data. Kabel USB dari powerbank seringkali tidak memiliki kabel data (hanya diisi daya). Jadi, komputer Anda tidak akan pernah menjalin komunikasi serial dengan ESP8266 Anda. Menggunakan kabel USB yang tepat akan menyelesaikan masalah Anda.\nMemilih Papan Buka Alat \u003e Board. Untuk tutorial ini, kami berasumsi bahwa Anda menggunakan ESP8266, jadi pastikan Anda memilih opsi “esp8266”: ![[Pasted image 20261016071136.png]]\nMem-flash/Mengunggah Firmware MicroPython Terakhir, buka menu Tools \u003e BurnFirmware untuk mem-flash ESP32 Anda dengan MicroPython. ![[Pasted image 20261016071157.png]]\nPilih semua opsi ini untuk mem-flash papan ESP8266:\nPapan: ESP8266 burn_addr: 0x0 erase_flash: Iya com: COMX (dalam kasus kami COM5) Firmware: Pilih “Pengguna” dan pilih file .bin ESP8266 yang diunduh sebelumnya ![[Pasted image 20261016071212.png]] Setelah menekan tombol “Pilih”, navigasikan ke folder Unduhan Anda dan pilih file .bin ESP8266: ![[Pasted image 20261016071225.png]]\nSetelah semua pengaturan dipilih, tahan tombol “BOOT/FLASH” di papan ESP8266 Anda: ![[Pasted image 20261016071238.png]]\nSambil menahan “BOOT/FLASH”, klik tombol “ok” di jendela update firmware: ![[Pasted image 20261016071255.png]]\nSaat proses “EraseFlash” dimulai, Anda dapat melepaskan tombol “BOOT/FLASH”. Setelah beberapa detik, firmware akan di-flash ke papan ESP8266 Anda. ![[Pasted image 20261016071311.png]]\nCatatan: jika tanda pada “EraseFlash” tidak bergerak dan Anda melihat pesan kesalahan yang bertuliskan “erase false.”, itu berarti ESP8266 Anda tidak dalam flashing mode. Anda perlu mengulangi semua langkah yang dijelaskan sebelumnya dan menahan tombol “BOOT/FLASH” lagi untuk memastikan ESP8266 Anda masuk ke flashing mode. ![[Pasted image 20261016071319.png]]\nKesimpulan Semoga tutorial ini bermanfaat bagi pengembang IoT yang ingin menggunakan skrip bahasa pemrograman berbasis Python. ESP32/ESP8266 kita sekarang telah selesai di-flash dengan firmware MicroPython. Untuk mempelajari lebih lanjut tentang MicroPython, baca: Memulai MicroPython di ESP32 dan ESP8266.\n",
+  "wordCount" : "1114",
   "inLanguage": "en",
   "image":"http://localhost:1313/images/header1.jpg","datePublished": "2026-10-12T22:56:01+08:00",
   "dateModified": "2026-10-12T22:56:01+08:00",
@@ -183,91 +183,101 @@ Sebelum melanjutkan tutorial ini, pastikan kita sudah menginstal uPyCraft IDE di
         <img loading="eager" src="http://localhost:1313/images/header1.jpg" alt="Skema ESP32">
         <figcaption>Proyek IoT Menggunakan ESP</figcaption>
 </figure>
-  <div class="post-content md-content"><p>Kali ini kita akan coba cara mem-flash firmware MicroPython ke papan ESP32/ESP8266 menggunakan perangkat lunak IDE uPyCraft. Tools ini dapat berjalan di Windows, Linux, dan Mac OS X.</p>
-<p>Sebelum melanjutkan tutorial ini, pastikan kita sudah menginstal uPyCraft IDE di komputer/laptop kesayangan… Jika belum dapat didownload dan diinstall secara gratis di sini: GitHub — DFRobot/uPyCraft. Dengan uPyCraft IDE yang diinstal di komputer, kita dapat dengan mudah mem-flash mikrokontroler ESP32 atau ESP8266 dengan firmware MicroPython.</p>
+  <div class="post-content md-content"><p>Kali ini kita akan coba cara mem-flash firmware MicroPython ke papan ESP32/ESP8266 menggunakan perangkat lunak IDE <a href="https://github.com/DFRobot/uPyCraft">uPyCraft</a>. Tools ini dapat berjalan di Windows, Linux, dan Mac OS X.</p>
+<p>Sebelum melanjutkan tutorial ini, pastikan kita sudah menginstal uPyCraft IDE di komputer/laptop kesayangan… Jika belum dapat didownload dan diinstall secara gratis di sini: <a href="https://github.com/DFRobot/uPyCraft">GitHub — DFRobot/uPyCraft</a>. Dengan uPyCraft IDE yang diinstal di komputer, kita dapat dengan mudah mem-flash mikrokontroler ESP32 atau ESP8266 dengan firmware MicroPython.</p>
 <p>Catatan: Setelah menginstal firmware MicroPython pada ESP32 atau ESP8266, kita dapat kembali dan menggunakan Arduino IDE lagi. Yang dilakukan hanya perlu mengunggah kode menggunakan Arduino IDE. Kemudian, jika ingin menggunakan MicroPython lagi, kita perlu mem-flash firmware MicroPython kembali.</p>
-<p>[Bagian 1 — ESP32] Mengunduh dan Mem-flash Firmware MicroPython di ESP32
-Untuk mengunduh firmware MicroPython versi terbaru untuk ESP32, buka halaman Unduhan MicroPython dan gulir ke bawah ke bagian ESP32.</p>
-<p>Anda akan melihat halaman web serupa (lihat gambar di bawah) dengan tautan terbaru untuk mengunduh file .bin ESP32 — misalnya: esp32–20181007-v1.9.4–631-g338635ccc.bin.</p>
-<p><img alt="Mengunduh file bin esp32" loading="lazy" src="/images/micropython-esp1.jpg"></p>
+<p>Bagian 1 — Mengunduh dan Mem-flash Firmware MicroPython di ESP32
+Untuk mengunduh firmware MicroPython versi terbaru untuk ESP32, buka halaman <a href="http://micropython.org/download#esp32">Unduhan MicroPython berikut ini</a> dan gulir ke bawah ke bagian ESP32.</p>
+<p>Anda akan melihat halaman web serupa (lihat gambar di bawah) dengan tautan terbaru untuk mengunduh file .bin ESP32 — misalnya: esp32–20181007-v1.9.4–631-g338635ccc.bin.
+![[Pasted image 20261016065640.png]]</p>
 <p>Catatan: jika Anda menggunakan mikrokontroler yang berbeda (seperti PyBoard, WiPy, atau lainnya), buka halaman Unduhan MicroPython dan unduh firmware yang tepat untuk papan Anda.</p>
 <p>Memilih Port Serial
-Buka Alat &gt; Serial dan pilih port COM ESP32 Anda (dalam kasus kami adalah COM5).</p>
-<p>Important: Jika telah menghubungkan ESP32 ke komputer, tetapi tidak dapat menemukan Port ESP32 yang tersedia di IDE uPyCraft, ada beberapa kemungkinan: 1. Driver USB bermasalah atau belum diinstall, atau 2. Kabel USB yang dipakai adalah kabel tanpa kabel data (hanya untuk cas saja).</p>
+Buka Alat &gt; Serial dan pilih port COM ESP32 Anda (dalam kasus kami adalah COM5).
+![[Pasted image 20261016065720.png]]</p>
+<p><strong>Peringatan</strong>: Jika telah menghubungkan ESP32 ke komputer, tetapi tidak dapat menemukan Port ESP32 yang tersedia di IDE uPyCraft, ada beberapa kemungkinan: 1. Driver USB bermasalah atau belum diinstall, atau 2. Kabel USB yang dipakai adalah kabel tanpa kabel data (hanya untuk cas saja).</p>
 <ol>
-<li>Jika tidak melihat port COM ESP yang tersedia, ini sering kali berarti kita belum menginstal driver USB. Perhatikan lebih cermat chip di sebelah regulator tegangan pada papan dan periksa namanya.</li>
+<li>Jika tidak melihat port COM ESP yang tersedia, ini sering kali berarti kita belum menginstal driver USB. Perhatikan lebih cermat chip di sebelah regulator tegangan pada papan dan periksa namanya. Pada percobaan ini, kami mendapatkan informasi board yang digunakan adalah ESP32 DEVKIT V1 DOIT board menggunakan chip CP2102.</li>
 </ol>
-<p>ESP32 DEVKIT V1 DOIT board menggunakan chip CP2102.</p>
-<p>Press enter or click to view image in full size</p>
+<p>![[Pasted image 20261016070003.png]]</p>
 <p>Buka Google dan cari chip spesifik Anda untuk menemukan driver dan menginstalnya di sistem operasi Anda.</p>
-<p>Press enter or click to view image in full size</p>
-<p>Anda dapat mengunduh driver CP2102 di situs web Silicon Labs.</p>
-<p>Press enter or click to view image in full size</p>
-<p>Setelah diinstal, mulai ulang IDE uPyCraft dan kita akan melihat port COM di menu Tools.</p>
+<p>![[Pasted image 20261016070017.png]]</p>
+<p>Anda dapat mengunduh driver CP2102 di situs web <a href="https://www.silabs.com/products/development-tools/software/usb-to-uart-bridge-vcp-drivers">Silicon Labs.</a></p>
+<p>![[Pasted image 20261016070103.png]]</p>
+<p>Setelah diinstal, restart IDE uPyCraft dan kita akan melihat port COM di menu Tools.</p>
 <ol start="2">
 <li>Jika telah menginstal driver, tetapi tidak dapat melihat perangkat, periksa kembali apakah sudah dipastikan menggunakan kabel USB dengan kabel data.</li>
 </ol>
 <p>Kabel USB dari powerbank seringkali tidak memiliki kabel data (hanya diisi daya). Jadi, komputer tidak akan pernah menjalin komunikasi serial dengan ESP32. Menggunakan kabel USB yang tepat akan menyelesaikan masalahnya.</p>
 <p>Memilih Board
-Go to Tools &gt; Board. For this tutorial, we assume that you’re using the ESP32, so make sure you select the “esp32” option:</p>
-<p>Flashing/Uploading MicroPython Firmware
-Finally, go to Tools &gt; BurnFirmware menu to flash your ESP32 with MicroPython.</p>
+Pilih Tools &gt; Board. Pada tutorial ini kami menggunakan ESP32, so make sure you select the “esp32” option:
+![[Pasted image 20261016070201.png]]</p>
+<p><strong>Flashing/Uploading MicroPython Firmware</strong>
+Langkah terakhir, go to Tools &gt; BurnFirmware menu to flash your ESP32 with MicroPython.
+![[Pasted image 20261016070345.png]]</p>
 <p>Select all these options to flash the ESP32 board:</p>
 <p>board: esp32
 burn_addr: 0x1000
 erase_flash: yes
 com: COMX (in our case it’s COM5)
-Firmware: Select “Users” and choose the ESP32 .bin file downloaded earlier</p>
-<p>Setelah menekan tombol “Pilih”, navigasikan ke folder Unduhan Anda dan pilih file .bin ESP32:</p>
-<p>Press enter or click to view image in full size</p>
-<p>Setelah semua pengaturan dipilih, tahan tombol “BOOT/FLASH” di papan ESP32 Anda:</p>
-<p>Press enter or click to view image in full size</p>
-<p>Sambil menahan “BOOT/FLASH”, klik tombol “ok” di jendela firmware bakar:</p>
-<p>Saat proses “EraseFlash” dimulai, Anda dapat melepaskan tombol “BOOT/FLASH”. Setelah beberapa detik, firmware akan di-flash ke papan ESP32 Anda.</p>
-<p>Catatan: jika bilah “EraseFlash” tidak bergerak dan Anda melihat pesan kesalahan yang mengatakan “hapus salah.”, itu berarti ESP32 Anda tidak dalam mode berkedip. Anda perlu mengulangi semua langkah yang dijelaskan sebelumnya dan menahan tombol “BOOT/FLASH” lagi untuk memastikan ESP32 Anda masuk ke mode berkedip.</p>
-<p>[Bagian 2 — ESP8266] Mengunduh dan Mem-flash Firmware MicroPython di ESP8266
-Untuk mengunduh firmware MicroPython versi terbaru untuk ESP8266, buka halaman Unduhan MicroPython dan gulir ke bawah ke bagian ESP8266.</p>
-<p>Download the Medium app
-Anda akan melihat halaman web serupa (lihat gambar di bawah) dengan tautan terbaru untuk mengunduh file .bin ESP8266 — misalnya: esp8266–20180511-v1.9.4.bin.</p>
-<p>Press enter or click to view image in full size</p>
-<p>Catatan: jika Anda menggunakan papan yang berbeda (seperti PyBoard, WiPy, atau lainnya), buka halaman Unduhan MicroPython dan unduh firmware yang tepat untuk papan Anda.</p>
-<p>Memilih Port Serial
-Buka Alat &gt; Serial dan pilih port COM ESP8266 Anda (dalam kasus kami adalah COM5).</p>
+Firmware: Select “Users” and choose the ESP32 .bin file downloaded earlier
+![[Pasted image 20261016070407.png]]
+Setelah menekan tombol “Pilih”, navigasikan ke folder Unduhan Anda dan pilih file .bin ESP32:
+![[Pasted image 20261016070419.png]]</p>
+<p>Setelah semua pengaturan dipilih, tahan tombol “BOOT/FLASH” di papan ESP32 Anda:
+![[Pasted image 20261016070438.png]]</p>
+<p>Sambil menahan “BOOT/FLASH”, klik tombol “ok” di jendela update firmware:
+![[Pasted image 20261016070449.png]]</p>
+<p>Saat proses “EraseFlash” dimulai, Anda dapat melepaskan tombol “BOOT/FLASH”. Setelah beberapa detik, firmware akan di-flash ke papan ESP32 Anda.
+![[Pasted image 20261016070530.png]]</p>
+<p>Catatan: jika bilah “EraseFlash” tidak bergerak dan Anda melihat pesan kesalahan yang mengatakan “erase false.”, itu berarti ESP32 Anda tidak dalam mode berkedip. Anda perlu mengulangi semua langkah yang dijelaskan sebelumnya dan menahan tombol “BOOT/FLASH” lagi untuk memastikan ESP32 Anda masuk ke mode berkedip.
+![[Pasted image 20261016070604.png]]</p>
+<p><strong>Bagian 2 — Mengunduh dan Mem-flash Firmware MicroPython di ESP8266</strong>
+Untuk mengunduh firmware MicroPython versi terbaru untuk ESP8266, buka halaman <a href="http://micropython.org/download#esp8266">Unduhan MicroPython berikut ini</a> dan gulir ke bawah ke bagian ESP8266.
+Anda akan melihat halaman web serupa (lihat gambar di bawah) dengan tautan terbaru untuk mengunduh file .bin ESP8266 — misalnya: esp8266–20180511-v1.9.4.bin.
+![[Pasted image 20261016070816.png]]
+Catatan: jika Anda menggunakan papan yang berbeda (seperti PyBoard, WiPy, atau lainnya), buka halaman <a href="http://micropython.org/downloads">Unduhan MicroPython berikut ini </a>dan unduh firmware yang tepat untuk papan Anda.</p>
+<p><strong>Memilih Port Serial</strong>
+Buka Alat &gt; Serial dan pilih port COM ESP8266 Anda (dalam kasus kami adalah COM5).
+![[Pasted image 20261016070920.png]]</p>
 <p>Penting: jika Anda mencolokkan papan ESP32 ke komputer, tetapi Anda tidak dapat menemukan Port ESP32 yang tersedia di IDE uPyCraft, itu mungkin salah satu dari dua masalah ini: 1. Driver USB hilang atau 2. Kabel USB tanpa kabel data.</p>
 <ol>
-<li>Jika Anda tidak melihat port COM ESP Anda tersedia, ini sering kali berarti Anda tidak menginstal driver USB. Perhatikan lebih dekat chip di sebelah pengatur tegangan di atas kapal dan periksa namanya.</li>
+<li>Jika Anda tidak melihat port COM ESP Anda tersedia, ini sering kali berarti Anda tidak menginstal driver USB. Perhatikan lebih dekat chip di sebelah pengatur tegangan di atas kapal dan periksa namanya. Pada tutorial ini kebetulan kami mendapatkan informasi board ESP-12E NodeMCU ESP8266 menggunakan chip CP2102.
+![[Pasted image 20261016071021.png]]</li>
 </ol>
-<p>Papan ESP-12E NodeMCU ESP8266 menggunakan chip CP2102.</p>
-<p>Press enter or click to view image in full size</p>
-<p>Buka Google dan cari chip spesifik Anda untuk menemukan driver dan menginstalnya di sistem operasi Anda.</p>
-<p>Press enter or click to view image in full size</p>
-<p>Anda dapat mengunduh driver CP2102 di situs web Silicon Labs.</p>
-<p>Press enter or click to view image in full size</p>
+<p>Buka Google dan cari chip spesifik Anda untuk menemukan driver dan menginstalnya di sistem operasi Anda.
+![[Pasted image 20261016071037.png]]
+Anda dapat mengunduh driver CP2102 di situs web <a href="https://www.silabs.com/products/development-tools/software/usb-to-uart-bridge-vcp-drivers">Silicon Labs berikut ini</a>.
+![[Pasted image 20261016071117.png]]</p>
 <p>Setelah diinstal, mulai ulang IDE uPyCraft dan Anda akan melihat port COM di menu Alat.</p>
 <ol start="2">
 <li>Jika Anda telah menginstal driver, tetapi Anda tidak dapat melihat perangkat, periksa kembali apakah Anda menggunakan kabel USB dengan kabel data.</li>
 </ol>
 <p>Kabel USB dari powerbank seringkali tidak memiliki kabel data (hanya diisi daya). Jadi, komputer Anda tidak akan pernah menjalin komunikasi serial dengan ESP8266 Anda. Menggunakan kabel USB yang tepat akan menyelesaikan masalah Anda.</p>
-<p>Memilih Papan
-Buka Alat &gt; Board. Untuk tutorial ini, kami berasumsi bahwa Anda menggunakan ESP8266, jadi pastikan Anda memilih opsi “esp8266”:</p>
-<p>Mem-flash/Mengunggah Firmware MicroPython
-Terakhir, buka menu Tools &gt; BurnFirmware untuk mem-flash ESP32 Anda dengan MicroPython.</p>
+<p><strong>Memilih Papan</strong>
+Buka Alat &gt; Board. Untuk tutorial ini, kami berasumsi bahwa Anda menggunakan ESP8266, jadi pastikan Anda memilih opsi “esp8266”:
+![[Pasted image 20261016071136.png]]</p>
+<p><strong>Mem-flash/Mengunggah Firmware MicroPython</strong>
+Terakhir, buka menu Tools &gt; BurnFirmware untuk mem-flash ESP32 Anda dengan MicroPython.
+![[Pasted image 20261016071157.png]]</p>
 <p>Pilih semua opsi ini untuk mem-flash papan ESP8266:</p>
 <p>Papan: ESP8266
 burn_addr: 0x0
 erase_flash: Iya
 com: COMX (dalam kasus kami COM5)
-Firmware: Pilih “Pengguna” dan pilih file .bin ESP8266 yang diunduh sebelumnya</p>
-<p>Setelah menekan tombol “Pilih”, navigasikan ke folder Unduhan Anda dan pilih file .bin ESP8266:</p>
-<p>Press enter or click to view image in full size</p>
-<p>Setelah semua pengaturan dipilih, tahan tombol “BOOT/FLASH” di papan ESP8266 Anda:</p>
-<p>Sambil menahan “BOOT/FLASH”, klik tombol “ok” di jendela firmware bakar:</p>
-<p>Saat proses “EraseFlash” dimulai, Anda dapat melepaskan tombol “BOOT/FLASH”. Setelah beberapa detik, firmware akan di-flash ke papan ESP8266 Anda.</p>
-<p>Catatan: jika tanda pada “EraseFlash” tidak bergerak dan Anda melihat pesan kesalahan yang bertuliskan “erase false.”, itu berarti ESP8266 Anda tidak dalam flashing mode. Anda perlu mengulangi semua langkah yang dijelaskan sebelumnya dan menahan tombol “BOOT/FLASH” lagi untuk memastikan ESP8266 Anda masuk ke flashing mode.</p>
+Firmware: Pilih “Pengguna” dan pilih file .bin ESP8266 yang diunduh sebelumnya
+![[Pasted image 20261016071212.png]]
+Setelah menekan tombol “Pilih”, navigasikan ke folder Unduhan Anda dan pilih file .bin ESP8266:
+![[Pasted image 20261016071225.png]]</p>
+<p>Setelah semua pengaturan dipilih, tahan tombol “BOOT/FLASH” di papan ESP8266 Anda:
+![[Pasted image 20261016071238.png]]</p>
+<p>Sambil menahan “BOOT/FLASH”, klik tombol “ok” di jendela update firmware:
+![[Pasted image 20261016071255.png]]</p>
+<p>Saat proses “EraseFlash” dimulai, Anda dapat melepaskan tombol “BOOT/FLASH”. Setelah beberapa detik, firmware akan di-flash ke papan ESP8266 Anda.
+![[Pasted image 20261016071311.png]]</p>
+<p>Catatan: jika tanda pada “EraseFlash” tidak bergerak dan Anda melihat pesan kesalahan yang bertuliskan “erase false.”, itu berarti ESP8266 Anda tidak dalam flashing mode. Anda perlu mengulangi semua langkah yang dijelaskan sebelumnya dan menahan tombol “BOOT/FLASH” lagi untuk memastikan ESP8266 Anda masuk ke flashing mode.
+![[Pasted image 20261016071319.png]]</p>
 <p>Kesimpulan
-Semoga tutorial ini bermanfaat bagi pengembang IoT yang ingin menggunakan skrip bahasa pemrograman berbasis Python. ESP32/ESP8266 kita sekarang telah selesai di-flash dengan firmware MicroPython. Untuk mempelajari lebih lanjut tentang MicroPython, baca: Memulai MicroPython di ESP32 dan ESP8266.</p>
-<h3 id="kode-pemrograman">Kode Pemrograman<a hidden class="anchor" aria-hidden="true" href="#kode-pemrograman">#</a></h3>
-<p>Berikut adalah kode praktis untuk mencobanya:</p>
+Semoga tutorial ini bermanfaat bagi pengembang IoT yang ingin menggunakan skrip bahasa pemrograman berbasis Python. ESP32/ESP8266 kita sekarang telah selesai di-flash dengan firmware MicroPython. Untuk mempelajari lebih lanjut tentang MicroPython, baca: <a href="https://randomnerdtutorials.com/getting-started-micropython-esp32-esp8266/">Memulai MicroPython di ESP32 dan ESP8266</a>.</p>
 
 
   </div>
