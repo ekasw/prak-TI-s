@@ -3,5 +3,5 @@
   "newFileLocation": "folder",
   "newFileFolderPath": "content/posts",
   "useMarkdownLinks": true,
-  "newLinkFormat": "absolute"
+  "newLinkFormat": "shortest"
 }
