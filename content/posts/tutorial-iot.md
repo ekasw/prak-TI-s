@@ -19,7 +19,7 @@ Untuk mengunduh firmware MicroPython versi terbaru untuk ESP32, buka halaman [Un
 
 Anda akan melihat halaman web serupa (lihat gambar di bawah) dengan tautan terbaru untuk mengunduh file .bin ESP32 — misalnya: esp32–20181007-v1.9.4–631-g338635ccc.bin.
 ![gambar1](/images/20261016081903.png)
-![](Pasted%20image%2020261016170852.png)
+![](Pasted%20image%2020261016172200.png)
 Catatan: jika Anda menggunakan mikrokontroler yang berbeda (seperti PyBoard, WiPy, atau lainnya), buka halaman Unduhan MicroPython dan unduh firmware yang tepat untuk papan Anda.
 
 Memilih Port Serial
