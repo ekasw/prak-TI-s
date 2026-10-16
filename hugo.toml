@@ -16,3 +16,12 @@ theme = 'PaperMod'
 [cover]
     linkable = true
     responsiveImages = false
+
+[module]
+    [[module.mounts]]
+        source = 'static'
+        target = 'static'
+
+    [[module.mounts]]
+        source = 'static/images'
+        target = 'content/posts/images'
