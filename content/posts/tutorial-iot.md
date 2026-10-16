@@ -18,18 +18,18 @@ Bagian 1 — Mengunduh dan Mem-flash Firmware MicroPython di ESP32
 Untuk mengunduh firmware MicroPython versi terbaru untuk ESP32, buka halaman [Unduhan MicroPython berikut ini](http://micropython.org/download#esp32) dan gulir ke bawah ke bagian ESP32.
 
 Anda akan melihat halaman web serupa (lihat gambar di bawah) dengan tautan terbaru untuk mengunduh file .bin ESP32 — misalnya: esp32–20181007-v1.9.4–631-g338635ccc.bin.
-![](Pasted%20image%2020261016081002.png)
+![](static/images/Pasted%20image%2020261016081903.png)
 
 Catatan: jika Anda menggunakan mikrokontroler yang berbeda (seperti PyBoard, WiPy, atau lainnya), buka halaman Unduhan MicroPython dan unduh firmware yang tepat untuk papan Anda.
 
 Memilih Port Serial
 Buka Alat > Serial dan pilih port COM ESP32 Anda (dalam kasus kami adalah COM5).
-![](Pasted%20image%2020261016081014.png)
+![](static/images/Pasted%20image%2020261016081935.png)
 
 **Peringatan**: Jika telah menghubungkan ESP32 ke komputer, tetapi tidak dapat menemukan Port ESP32 yang tersedia di IDE uPyCraft, ada beberapa kemungkinan: 1. Driver USB bermasalah atau belum diinstall, atau 2. Kabel USB yang dipakai adalah kabel tanpa kabel data (hanya untuk cas saja).
 
 1. Jika tidak melihat port COM ESP yang tersedia, ini sering kali berarti kita belum menginstal driver USB. Perhatikan lebih cermat chip di sebelah regulator tegangan pada papan dan periksa namanya. Pada percobaan ini, kami mendapatkan informasi board yang digunakan adalah ESP32 DEVKIT V1 DOIT board menggunakan chip CP2102.
-![](Pasted%20image%2020261016081039.png)
+![](static/images/Pasted%20image%2020261016081947.png)
 
 Buka Google dan cari chip spesifik Anda untuk menemukan driver dan menginstalnya di sistem operasi Anda.
 
