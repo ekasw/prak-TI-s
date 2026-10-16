@@ -1,14 +1,18 @@
 baseURL = 'https://pages.dev'
-locale = 'en-us'
+languageCode = 'id-id'
 title = 'Prak-TI`s'
-theme = "PaperMod"
+theme = 'PaperMod'
 
 [params]
     env = "production"
-    title = "Prak TI - IoT & Tech Blog"
+    title = "Prak-TI`s"
     description = "Berbagi tutorial IoT, pemrograman, dan dunia TI praktis."
     
-    # Memunculkan tombol ikon sosial media atau ikon RSS di header (opsional)
+    # Fitur pendukung PaperMod
     ShowReadingTime = true
     ShowShareButtons = true
     ShowCodeCopyButtons = true
+
+[cover]
+    linkable = true
+    responsiveImages = false
